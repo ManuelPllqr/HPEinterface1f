@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Box, Button, Collapsible, Heading, Grommet, Layer, ResponsiveContext, Image, Text, DataTable, Meter, FormField, Anchor, RangeInput, Chart} from 'grommet';
 import { FormClose, Notification, Facebook } from 'grommet-icons';
 import { hpe } from 'grommet-theme-hpe';
-
+{/*import libraries above*/}
 
 
 const AppBar = (props) => (
@@ -18,7 +18,7 @@ const AppBar = (props) => (
 
 );
 
-
+{/*sets theme and HPE color id*/}
 const theme = {
     global: {
         colors: {
@@ -41,24 +41,27 @@ class App extends Component {
         const { value } = this.state;
         return (
 
-            <Grommet theme={hpe} full>
+            <Grommet theme={hpe} full>{/*sets Grommet HPE theme*/}
                 <ResponsiveContext.Consumer>
                     {size => (
                         <Box fill>
-
-                            <AppBar flex margin={{top:'5%'}} gap='30%'>
+                            {/*direction 'row' allows elements inside the box to be aligned horizontally, gap sets the gap between elements of the box*/}
+                            <AppBar flex margin={{top:'5%'}} gap='12%'> {/*use % so the interface is compatible with different screen sizes*/}
                                 <Image
                                     style={{width:100,height:100}}
                                     src='https://www.hpe.com/etc/designs/hpeweb/logo.jpg'
-                                />
+                                />{/*link to HPE image*/}
+                                {/*alignSelf and textAlign centers the text*/}
                                 <Heading level='3' color='#00b388' alignSelf='center' textAlign='center'>Predictive Maintenance - Predictive</Heading>
                                 <Image
                                     style={{width:50,height:50}}
                                     src='https://media.licdn.com/dms/image/C4D0BAQEZ2_r-IM1lRw/company-logo_200_200/0?e=2159024400&v=beta&t=cbDc9rSI649EBVMWOgbddgWmR4yItafGXzOL_t2TmdM'
-                                />
+                                />{/*link to dataiku image*/}
                             </AppBar>
 
                             <Box>
+                                {/*margin is used to place the box in a specific area according to top, bottom, horizontal, vertical values*/}
+                                {/*pad allows to specify the space between the box's elements and the box borders*/}
                                 <Box flex margin={{horizontal:'2%',top:'15%'}}  style={{width:400}} pad='xlarge' border={{color:'red', size}} >
 
                                     <Box flex align='center' justify='center' >
@@ -80,6 +83,7 @@ class App extends Component {
                                         <br></br>
                                         <RangeInput/>
                                         <br></br>
+                                        {/*first DataTable where the columns are defined first with their unique properties, data is defined after*/}
                                         <DataTable style={{width:270,height:160}}
                                                    columns={[
                                                        {
@@ -141,7 +145,7 @@ class App extends Component {
 
                                 <Heading size="10px" margin={{horizontal:'10px'}}>Predicted Equipment Failure Status</Heading>
                                 <br></br>
-
+                                {/*second DataTable where the columns are defined first with their unique properties, data is defined after*/}
                                 <DataTable style={{width:300,height:260}} margin={{horizontal:'10px'}}
                                            columns={[
                                                {
